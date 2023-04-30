@@ -1,37 +1,37 @@
 /**
- * Основная функция для совершения запросов
- * на сервер.
- * */
-
+* Основная функция для совершения запросов на сервер.
+* */
 const createRequest = ({url, data, method, callback}) => {
     const xhr = new XMLHttpRequest();
-    const formData = new FormData();
-    xhr.responseType = 'json';
+    xhr.responseType = 'json' // формат, в котором необходимо выдать результат
+    const formData = new FormData(); // создаем объект для передачи данных в запрос при !== GET
     try {
         if(method === 'GET') {
-            // обработка запроса GET
-            let urlParams = url;
+            // обработка GET запроса
             for(let key in data) {
-                urlParams += `?${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`;
+                url += `?${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`;
             }
-            xhr.open('GET', urlParams);
+            xhr.open(`GET`, url);
             xhr.send();
-        } else if(method === 'POST') {
-            // обработка запроса POST
+        } else if(method !== 'GET') { // запрос не GET
             for(let key in data) {
-                formData.append(key, data[key]);
+                formData.append(key, data[key])
             }
-            xhr.open('POST', url);
+            xhr.open(method, url);
             xhr.send(formData);
         }
-        xhr.onload = function() {
-            if(xhr.response && xhr.response.success) {
-                callback(null, xhr.response)
-            } else {
-                callback(new Error(xhr.response.error), null)
+
+        // В случае успешного запроса
+        xhr.addEventListener('load', () => {
+            const response = xhr.response;
+            const err = response.error;
+            if(response && response.success) {
+                callback(null, response);
+            } else { // в случае, если возникают ошибки 
+                callback(err, null);
             }
-        }
-    } catch (err) {
-        callback(err, null)
+        })
+    }  catch (e) {
+        callback("Произошла ошибка: ", e); // если код try не выполнился - вывести ошибку
     }
 }

@@ -5,6 +5,12 @@
       "email": "demo@demo",
       "password": "demo",
       "id": "1"
+    },
+    {
+      "name": "Михаил",
+      "email": "test@test.ru",
+      "password": "test@test.rutest@test.ru",
+      "id": "zzubg76olh3l4s6y"
     }
   ],
   "accounts": [
@@ -22,6 +28,26 @@
       "name": "Бизнес",
       "user_id": "1",
       "id": "3"
+    },
+    {
+      "name": "Сбербанк",
+      "user_id": "zzubg76olh3l4s6y",
+      "id": "zzubgdm0lh3l6b7u"
+    },
+    {
+      "name": "Родители",
+      "user_id": "zzubg76olh3l4s6y",
+      "id": "zzubg8pslh3l6qt8"
+    },
+    {
+      "name": "Семья",
+      "user_id": "zzubg76olh3l4s6y",
+      "id": "zzubg8o4lh3l951e"
+    },
+    {
+      "name": "1",
+      "user_id": "zzubg76olh3l4s6y",
+      "id": "zzubgatwlh3l9yob"
     }
   ],
   "transactions": [
@@ -159,6 +185,60 @@
       "sum": 300000,
       "type": "expense",
       "user_id": "1"
+    },
+    {
+      "id": "zzubgdqglh3lbbgt",
+      "type": "income",
+      "name": "Зарплата",
+      "sum": 60000,
+      "account_id": "zzubgdm0lh3l6b7u",
+      "user_id": "zzubg76olh3l4s6y",
+      "created_at": "2023-04-30T15:52:24.268Z"
+    },
+    {
+      "id": "zzubgbf8lh3lbhsk",
+      "type": "expense",
+      "name": "Машина",
+      "sum": 13300,
+      "account_id": "zzubgdm0lh3l6b7u",
+      "user_id": "zzubg76olh3l4s6y",
+      "created_at": "2023-04-30T15:52:32.467Z"
+    },
+    {
+      "id": "zzubgbtslh3lbvgg",
+      "type": "income",
+      "name": "Подарок",
+      "sum": 15000,
+      "account_id": "zzubgdm0lh3l6b7u",
+      "user_id": "zzubg76olh3l4s6y",
+      "created_at": "2023-04-30T15:52:50.175Z"
+    },
+    {
+      "id": "zzubg9r4lh3lc7n3",
+      "type": "income",
+      "name": "Подарок на др",
+      "sum": 15000,
+      "account_id": "zzubg8pslh3l6qt8",
+      "user_id": "zzubg76olh3l4s6y",
+      "created_at": "2023-04-30T15:53:05.966Z"
+    },
+    {
+      "id": "zzubg63glh3lcjp0",
+      "type": "expense",
+      "name": "Поход в магазин",
+      "sum": 5000,
+      "account_id": "zzubg8o4lh3l951e",
+      "user_id": "zzubg76olh3l4s6y",
+      "created_at": "2023-04-30T15:53:21.587Z"
+    },
+    {
+      "id": "zzubg724lh3lcrtc",
+      "type": "income",
+      "name": "Тест1",
+      "sum": 1111,
+      "account_id": "zzubgatwlh3l9yob",
+      "user_id": "zzubg76olh3l4s6y",
+      "created_at": "2023-04-30T15:53:32.111Z"
     }
   ]
 }
